@@ -1,3 +1,4 @@
+![Screenshot 2024-01-06 125956](https://github.com/mhmodfrmwi/X-O-Demo/assets/151141036/c64a72db-8f3f-4a7c-9d54-4e76afe3c20a)
 # X-O Game
 
 This is a simple X-O (Tic-Tac-Toe) game implemented in Python using the Tkinter library. The game allows two players, 'X' and 'O', to take turns and compete against each other. The winner is determined by forming a line of three of their symbols either horizontally, vertically, or diagonally on the 3x3 game grid.
