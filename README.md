@@ -48,7 +48,7 @@ Welcome to **Tic-Tac-Toe Titans**! This is a modern and fun implementation of th
 
 **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-username/tic-tac-toe-titans.git
+   git clone https://github.com/mhmodfrmwi/X-O-Demo
    cd tic-tac-toe-titans
    python main.py
    ```
