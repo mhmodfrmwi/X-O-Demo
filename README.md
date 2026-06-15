@@ -79,13 +79,6 @@ ruff check .
 
 Every push and pull request runs linting and the full pytest suite on Python 3.10, 3.11, and 3.12 via GitHub Actions.
 
-## Project Highlights (for your CV)
-
-- Separated **game engine** from **UI** for maintainability and testability
-- Implemented **minimax AI** with difficulty tiers
-- Added **pytest** coverage for board rules, AI behavior, and game flow
-- Set up **GitHub Actions CI** for automated quality checks
-
 ## License
 
 MIT
