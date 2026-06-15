@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import random
 from enum import Enum
-from typing import Optional
 
 from board import Board, CellCoords
 
@@ -17,7 +16,7 @@ class Difficulty(str, Enum):
 
 def get_computer_move(
   board: Board, player: str, difficulty: Difficulty
-) -> Optional[CellCoords]:
+) -> CellCoords | None:
   empty_cells = board.get_empty_cells()
   if not empty_cells:
     return None
@@ -38,7 +37,7 @@ def _opponent(player: str) -> str:
   return "o" if player == "x" else "x"
 
 
-def _find_tactical_move(board: Board, player: str) -> Optional[CellCoords]:
+def _find_tactical_move(board: Board, player: str) -> CellCoords | None:
   winning_move = _find_winning_move(board, player)
   if winning_move:
     return winning_move
@@ -50,7 +49,7 @@ def _find_tactical_move(board: Board, player: str) -> Optional[CellCoords]:
   return None
 
 
-def _find_winning_move(board: Board, player: str) -> Optional[CellCoords]:
+def _find_winning_move(board: Board, player: str) -> CellCoords | None:
   for row, col in board.get_empty_cells():
     trial = board.copy()
     trial.set_cell(row, col, player)

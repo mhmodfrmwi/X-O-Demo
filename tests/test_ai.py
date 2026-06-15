@@ -1,7 +1,7 @@
 """Tests for AI move selection."""
 
-from board import Board
 from ai import Difficulty, get_computer_move
+from board import Board
 
 
 def test_easy_picks_valid_move():
