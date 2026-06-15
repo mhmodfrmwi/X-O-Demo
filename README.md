@@ -4,7 +4,6 @@ A polished desktop tic-tac-toe game built with Python and Tkinter. The project d
 
 [![CI](https://github.com/mhmodfrmwi/X-O-Demo/actions/workflows/ci.yml/badge.svg)](https://github.com/mhmodfrmwi/X-O-Demo/actions/workflows/ci.yml)
 
-> **Screenshot:** After running the game, capture one with `python scripts/capture_screenshot.py` (requires Pillow) and save it to `docs/screenshot.png`.
 
 ## Features
 

@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import json
 from dataclasses import dataclass, field
-from typing import Optional
 
 from ai import Difficulty, get_computer_move
 from board import Board, CellCoords, WinningLine
@@ -15,9 +14,9 @@ from constants import EMPTY_CELL, GAME_MODES, PLAYERS, SCORES_FILE
 class MoveResult:
   success: bool
   game_over: bool = False
-  winner: Optional[str] = None
+  winner: str | None = None
   is_tie: bool = False
-  winning_line: Optional[WinningLine] = None
+  winning_line: WinningLine | None = None
   message: str = ""
 
 
@@ -28,7 +27,7 @@ class GameState:
   game_mode: str = GAME_MODES[0]
   difficulty: Difficulty = Difficulty.HARD
   game_over: bool = False
-  winner: Optional[str] = None
+  winner: str | None = None
   is_tie: bool = False
   x_wins: int = 0
   o_wins: int = 0
@@ -64,7 +63,7 @@ class GameLogic:
     return self.state.game_over
 
   @property
-  def winner(self) -> Optional[str]:
+  def winner(self) -> str | None:
     return self.state.winner
 
   @property
@@ -72,7 +71,7 @@ class GameLogic:
     return self.state.is_tie
 
   @property
-  def winning_line(self) -> Optional[WinningLine]:
+  def winning_line(self) -> WinningLine | None:
     return self.state.board.winning_line
 
   @property
@@ -189,7 +188,8 @@ class GameLogic:
           message=f"{self.state.winner.upper()} wins!",
         )
 
-    return MoveResult(success=True, message=f"{self.state.current_player.upper()}'s turn.")
+    player = self.state.current_player.upper()
+    return MoveResult(success=True, message=f"{player}'s turn.")
 
   def _make_computer_move(self) -> None:
     move = get_computer_move(
@@ -201,7 +201,7 @@ class GameLogic:
     self._apply_move(row, col, "o")
 
   def _finish_game(
-    self, winner: Optional[str] = None, is_tie: bool = False
+    self, winner: str | None = None, is_tie: bool = False
   ) -> None:
     self.state.game_over = True
     self.state.winner = winner
