@@ -2,8 +2,7 @@
 
 from __future__ import annotations
 
-from tkinter import Button, Frame, Label, StringVar, Tk
-from tkinter import ttk
+from tkinter import Button, Frame, Label, StringVar, Tk, ttk
 
 from ai import Difficulty
 from constants import (

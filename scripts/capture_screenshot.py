@@ -1,7 +1,6 @@
 """Optional helper to capture a README screenshot after launching the UI."""
 
 from pathlib import Path
-
 from tkinter import Tk
 
 from ui import TicTacToeUI

@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 from copy import deepcopy
-from typing import Optional
 
 from constants import BOARD_SIZE, EMPTY_CELL
 
@@ -18,10 +17,10 @@ class Board:
     self._cells: list[list[str]] = [
       [EMPTY_CELL for _ in range(BOARD_SIZE)] for _ in range(BOARD_SIZE)
     ]
-    self._winning_line: Optional[WinningLine] = None
+    self._winning_line: WinningLine | None = None
 
   @property
-  def winning_line(self) -> Optional[WinningLine]:
+  def winning_line(self) -> WinningLine | None:
     return self._winning_line
 
   def reset(self) -> None:
@@ -50,7 +49,7 @@ class Board:
       if self._cells[row][col] == EMPTY_CELL
     ]
 
-  def check_winner(self) -> Optional[str]:
+  def check_winner(self) -> str | None:
     self._winning_line = None
 
     for row in range(BOARD_SIZE):
@@ -77,7 +76,7 @@ class Board:
 
     return None
 
-  def _line_winner(self, coords: WinningLine) -> Optional[str]:
+  def _line_winner(self, coords: WinningLine) -> str | None:
     values = [self._cells[row][col] for row, col in coords]
     if values[0] != EMPTY_CELL and len(set(values)) == 1:
       self._winning_line = coords
