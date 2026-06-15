@@ -1,7 +1,6 @@
-from tkinter import Tk
-from ui import TicTacToeUI
+"""Backward-compatible entry point."""
+
+from main import main
 
 if __name__ == "__main__":
-    window = Tk()
-    app = TicTacToeUI(window)
-    window.mainloop()
+    main()

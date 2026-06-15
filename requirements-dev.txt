@@ -1,0 +1,6 @@
+# Runtime dependencies (stdlib only)
+# Python 3.10+ includes tkinter on most installations.
+
+# Development / CI
+pytest>=8.0
+ruff>=0.4
